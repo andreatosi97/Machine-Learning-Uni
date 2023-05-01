@@ -31,7 +31,7 @@ cars = pd.read_csv(data_url, sep="\t")
 # bplot.set_xlabel("Speed (mph)", fontsize=16)
 
 # solve
-X, Y, y_hat, error = np_close_lin_regr(cars)
+X, Y, y_hat, error = np_closeform_lin_regr(cars)
 
 # see results 
 plt.scatter(X, Y)

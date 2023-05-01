@@ -1,3 +1,4 @@
+import numpy as np
 import matplotlib.pyplot as plt
 from sklearn import datasets
 
@@ -80,3 +81,4 @@ m = -theta[1]/theta[2]
 c = -theta[0]/theta[2]
 x2 = m * x1 + c
 plt.plot(x1, x2, 'y-')
+plt.show()
