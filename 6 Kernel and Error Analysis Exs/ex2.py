@@ -30,7 +30,7 @@ def plot_discriminat_function(X, y, trained_model):
     plt.contourf(xx, yy, predicted, alpha=0.5)
     plt.set_cmap("gist_rainbow")
     # plt.scatter(X[:, 0], X[:, 1], c=y, cmap=plt.cm.Set1)
-    plt.plot(X[:, 0][y == -1], X[:, 1][y == -1], "r^")
+    plt.plot(X[:, 0][y == 0], X[:, 1][y == 0], "r^")
     plt.plot(X[:, 0][y == 1], X[:, 1][y == 1], "bs")
 
     plt.xlim(xx.min(), xx.max())
@@ -54,7 +54,6 @@ X, y = datasets.make_classification(
     scale=10,
     shift=10,
 )
-y[y == 0] = -1
 # split, here we avoid val
 X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.8)
 # scale
@@ -64,7 +63,7 @@ X_train = scl.transform(X_train)
 X_test = scl.transform(X_test)
 # visualize the data
 # fig = plt.figure(figsize=(7,5))
-# plt.plot(X_train[:, 0][y_train == -1], X_train[:, 1][y_train == -1], 'r^')
+# plt.plot(X_train[:, 0][y_train == 0], X_train[:, 1][y_train == 0], 'r^')
 # plt.plot(X_train[:, 0][y_train == 1], X_train[:, 1][y_train == 1], 'bs')
 # plt.title('Random Classification Data with 2 classes')
 
